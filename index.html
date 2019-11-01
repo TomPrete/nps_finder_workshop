@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>HACKER</title>
+  </head>
+  <body>
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
+      <img src="file:///Users/taprete/us_parks_workshop/assets/usnps.svg" alt="Smiley face" height="42" width="35">
+      <a class="navbar-brand text-white mx-3" href="#">NATIONAL PARK SEARCHER</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- SEARCH FIELD -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <form class="form-inline my-5 my-lg-0" id='form'>
+          <input class="form-control mr-sm-2 input-lg" type="search" placeholder="Search for a National Park"
+            aria-label="Search">
+          <button class="btn btn-primary btn my-2 my-sm-0 text-white" id='search-input' type="submit">Get Parks</button>
+        </form>
+      </div>
+    </nav>
+    <!-- CONTAINER -->
+    <div class="container" style='margin-top:25px'>
+      <div id='weather' style="text-align: center;"></div>
+      <div id='i-frame'></div>
+      <div class="row" id='google-map'>
+        <div class="card bg-dark text-white" id='front-image'>
+          <img src="https://www.visittheusa.com/sites/default/files/styles/hero_m_1300x700/public/images/hero_media_image/2016-10/Yellowstone.jpg?itok=mRcaUlcL" class="card-img" alt="...">
+          <div class="card-img-overlay">
+            <h5 class="card-title">Yellowston National Park</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
+              This content is a little bit longer.</p>
+            <p class="card-text">Last updated 3 mins ago</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./app.js" async defer></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+  </body>
+</html>
+
