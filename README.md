@@ -11,7 +11,7 @@ Application User Flow:
 
 ## Before We Begin
 
-1. Please download a text editor to write your code in. I like to use VSCode. You can download it (here)[https://code.visualstudio.com/download]
+1. Please download a text editor to write your code in. I like to use VSCode. You can download it [here](https://code.visualstudio.com/download)
 2. Please ensure you have a GMail Account to get access to the Google Maps Embed API
 
 --------------
