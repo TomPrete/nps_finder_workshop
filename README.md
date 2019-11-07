@@ -9,7 +9,7 @@ Application User Flow:
 2. We will retrieve and display a list of National Parks based on your search query.
 3. The list of National Parks will have 3 buttons on them, a button that links to the National Parks' website, a button that will display a Google Map of the National Park, and a button that will display the National Park's weather if applicable.
 
-## What you’ll learn today. 
+## What you’ll learn today.
 
 1. You’ll learn how to Use API’s (Google Maps, National Parks, Dark Sky).
 2. You’ll learn how to manipulate data that’s retrieved from an API using Javascript.
@@ -26,16 +26,16 @@ Application User Flow:
 
 ## Our Application File Structure
 
-After downloading the US National Parks folder from the Google Drive and unzipping it. There should be 2 files (`app.js`, `index.html`) and an `assets` folder. 
+After downloading the US National Parks folder from the Google Drive and unzipping it. There should be 2 files (`app.js`, `index.html`) and an `assets` folder.
 
 1. The `index.html` file:
     1. This HTML file is the main entry point to our application. We’ll open this file in the web browser.
 2. The `app.js` file:
     1. This Javascript file is where we’ll be performing all the logic of the application. Including getting data from the API’s.
 3. The `assets` folder:
-    1. This is where we’re storing our assets for our application. Like images and other file types. 
+    1. This is where we’re storing our assets for our application. Like images and other file types.
 
-There is a base of code in the `index.html` and `app.js` files that we’ll build upon. 
+There is a base of code in the `index.html` and `app.js` files that we’ll build upon.
 
 ## Let’s Get Started
 
@@ -72,7 +72,7 @@ Press `Command+Option+J` (Mac) or `Control+Shift+J` (Windows, Linux, Chrome 
 
 __Open DevTools from Chrome's main menu:__
 
-Click __Customize and control Google Chrome__ (the 3 vertical dots in the upper right hand corner of the Chrome Web Browser) and then select __More Tools > Developer Tools__. Navigate to the __Console__ tab. 
+Click __Customize and control Google Chrome__ (the 3 vertical dots in the upper right hand corner of the Chrome Web Browser) and then select __More Tools > Developer Tools__. Navigate to the __Console__ tab.
 
 If your `app.js` file was loaded correctly into your HTML file when your refresh your `index.html` page with the Chrome Dev Tools Console panel open you should see 2 things printed, `Hello Hacker!` and the file path to your `index.html` file (Ex: `file:///Users/taprete/us_national_parks/index.html`)
 
@@ -80,11 +80,11 @@ Let’s open up the `app.js` file in our Text Editor (VSCode). You can see on th
 
 ## Release 1: Getting National Park Data and Displaying National Parks
 
-For Release 1 we’ll be using the National Park’s API to get National Parks based on our search query. 
+For Release 1 we’ll be using the National Park’s API to get National Parks based on our search query.
 
-First, we’ll need to get an API key to use the NPS API. Visit the NPS [Get Started](https://www.nps.gov/subjects/developer/get-started.htm) page and Signup to receive an API Key to access National Park Service Data. 
+First, we’ll need to get an API key to use the NPS API. Visit the NPS [Get Started](https://www.nps.gov/subjects/developer/get-started.htm) page and Signup to receive an API Key to access National Park Service Data.
 
-Once you sign up you should receive an email with your API Key. Your API key is a unique identifier used to authenticate you when you’re making API Calls. 
+Once you sign up you should receive an email with your API Key. Your API key is a unique identifier used to authenticate you when you’re making API Calls.
 
 You should receive an email that looks something like this from __Your National Park Service API key__
 ```
@@ -110,7 +110,7 @@ When we click on the Get Parks button we want to grab National Park Data.
 
 Click on the Get Parks button and see what prints out in the Console. It should print `Search for national parks…`.  Where is the function being executed in our `app.js` file?
 
-In the function named `getNpsData` is where we’ll be getting all the National Park data. 
+In the function named `getNpsData` is where we’ll be getting all the National Park data.
 
 `getNpsData` Function:
 ```javascript
@@ -131,7 +131,7 @@ function getNpsData(event) {
     let npsElement = document.getElementById('national-parks')
     npsElement.innerHTML = loadingJumbo // Shows a loading status
     let search = event.target.elements[0].value // Grabs the search query
-    if (search.length) { // Conditional logic in case No Results are returned. 
+    if (search.length) { // Conditional logic in case No Results are returned.
       fetch(`https://developer.nps.gov/api/v1/parks?parkCode=&q=${search}&fields=images&api_key=${NPS_API}`)
         .then(res =>
           res.json()
@@ -148,7 +148,7 @@ function getNpsData(event) {
   }
 ```
 
-Look in the Console. You should get back data! __Woooooo!__ 
+Look in the Console. You should get back data! __Woooooo!__
 
 How is this happening?
 
@@ -179,7 +179,7 @@ function cleanNpsData(data) {
 
 In the `cleanNpsData` function is where we’ll parse out data returned from the National Parks API and only grab the data we want. But first in our `getNpsData` functions let’s pass the `data` that’s being passed into the `console.log(data.data)` and instead pass it into our `cleanNpsData` function and assign that to a variable.
 
-In our `getNpsData` function: 
+In our `getNpsData` function:
 ```javascript
 // GET NATIONAL PARK SERVICE DATA
 function getNpsData(event) {
@@ -205,9 +205,9 @@ function getNpsData(event) {
 }
 ```
 
-Next, in our `cleanNpsData` function lets loop through the data and extract only the data that we want. We only want the `fullName`, `description`,  the `image` url, and the park’s `url` for the time being. 
+Next, in our `cleanNpsData` function lets loop through the data and extract only the data that we want. We only want the `fullName`, `description`,  the `image` url, and the park’s `url` for the time being.
 
-We’re going to also be including a `googleMapUrl` and the `latLong` in the data but right now those two are commented out. We’ll get to those at a later. 
+We’re going to also be including a `googleMapUrl` and the `latLong` in the data but right now those two are commented out. We’ll get to those at a later.
 
 After (`cleanNpsData`):
 ```javascript
@@ -230,7 +230,7 @@ function cleanNpsData(data) {
 }
 ```
 
-Refresh your page and search for something like __seattle__ or __oregon__ and see what displays in our Console. 
+Refresh your page and search for something like __seattle__ or __oregon__ and see what displays in our Console.
 
 Example Search for `Seattle`:
 ```js
